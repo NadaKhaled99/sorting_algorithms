@@ -6,10 +6,12 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *tmp;
-	int y;
+	int n;
 
 	if (!list)
+	{
 		return;
+	}
 	tmp = *list;
 	while (tmp)
 	{
@@ -17,11 +19,11 @@ void insertion_sort_list(listint_t **list)
 		{
 			if (tmp->next)
 			{
-				if (tmp->y > tmp->next->y)
+				if (tmp->n > tmp->next->n)
 				{
-					y = tmp->y;
-					*(int *)&tmp->y = tmp->next->y;
-					*(int *)&tmp->next->y = y;
+					n = tmp->n;
+					*(int *)&tmp->n = tmp->next->n;
+					*(int *)&tmp->next->n = n;
 					tmp = *list;
 					print_list(*list);
 					break;
